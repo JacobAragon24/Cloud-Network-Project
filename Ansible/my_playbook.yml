@@ -1,0 +1,22 @@
+---
+  - name: My first playbook
+    hosts: webservers
+    become: true
+    tasks:
+    
+    - name: install docker  (state=present is optional)
+      apt:
+        name: docker.io
+        state: present
+     - name:  install pip  (state=present is optional)
+       apt:
+         name: python3-pip  (state=present is optional)
+         state: present
+      - name:  install docker
+        pip: 
+          name: docker
+          state: present
+       - name: install cyberxsecurity/dvwa  (state=present is optional)
+         docker-contatiner:
+           name: cyberxsecurity/dvwa
+           state: present
