@@ -7,9 +7,9 @@ The files in this repository were used to configure the network depicted below.
 
 https://github.com/JacobAragon24/Cloud-Network-Project/blob/main/Diagrams/Azure%20Cloud%20Network%20Diagram.png
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Ansible file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+  - https://github.com/JacobAragon24/Cloud-Network-Project/tree/main/Ansible
 
 This document contains the following details:
 - Description of the Topologu
@@ -24,8 +24,10 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly available, in addition to restricting traffic to the network.
+- The load balancer in this instance is a good way to mitigate DoS attacks as it will evenly distribute traffic to the webservers. 
+- The load balancer also acts as a health probe, checking that the machines behind the load balancer are functioning properly before sending traffic to them. 
+- The jump box machine is used as a gateway router forcing traffic through that single machine which makes it easier to secure and monitor traffic rather than securing and monitoring each individual machine.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
 - _TODO: What does Filebeat watch for?_
