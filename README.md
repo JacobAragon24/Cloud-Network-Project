@@ -29,9 +29,9 @@ Load balancing ensures that the application will be highly available, in additio
 - The load balancer also acts as a health probe, checking that the machines behind the load balancer are functioning properly before sending traffic to them. 
 - The jump box machine is used as a gateway router forcing traffic through that single machine which makes it easier to secure and monitor traffic rather than securing and monitoring each individual machine.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the machine metrics and system files.
+- Filebeat is used to collect data about the machines system files, this will help to make sure that our important documents haven't been changed or tampered with. 
+- Metricbeat is used to collect data about the machines metrics such as CPU usage and uptime, this way we can insure the availability of our DVWA application that have been configured on each Web VM. 
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
