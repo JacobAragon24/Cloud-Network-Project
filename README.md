@@ -92,8 +92,16 @@ We have installed the following Beats on these machines:
 - Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- Filebeat is used to collect data about the machines system files such as authlogs 
-- Metricbeat is used to collect data about the machines metrics such as CPU usage and uptime
+- Filebeat is used to collect data about the machines system files such as syslogs, sudo commands, ssh logins and new users and groups When installed and running properly it should appear as the screenshot below: 
+
+![image](https://user-images.githubusercontent.com/93610565/157132660-8b038692-4325-4078-80f8-e0bf350787cc.png)
+
+
+- Metricbeat is used to collect data about the machines metrics such as CPU usage and Memory usage. When installed and running properly it should appear as the screenshot below:
+
+![image](https://user-images.githubusercontent.com/93610565/157132343-2d2b052f-71c3-42f6-8296-95a76245a624.png)
+
+
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -101,11 +109,8 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the hosts file to ansible.
 - Update the hosts file to include a new hosts section elk server called 'elk' then add the elk IP address: 10.0.0.4 followed by ansible_python_interpreter=/usr/bin/python3
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Run the playbook, and navigate to your ELK VM and run a docker ps command to check that the installation worked as expected.
+- To see that ELK VM is up and running you can navigate to the URL http://104.42.31.5:5601/app/kibana and the it should appear as the screenshot below: 
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+![image](https://user-images.githubusercontent.com/93610565/157131755-ca3c9941-f1a9-476a-ac58-d9e3f50649d7.png)
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
