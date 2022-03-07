@@ -67,16 +67,19 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- The advantage to automate the configuration using ansible-playbooks is you can now use these playbooks in future configuration and it makes horizontal scaling much easier. 
+- The automated ansible-playbook is advantageous because it will run the required tasks all at once instead of indivually running the multitude of commands required to configure the ELK machine.  
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Use apt to install docker.io
+- Use apt to install python3-pip
+- Use pip to install docker module 
+- Use sysctl to change the value of memory at your disposal to the max amount availible (262144)
+- Use docker container to download the ELK container image sebp/elk:761 published on ports 5601:5601 9200:9200 5044:5044 with an restart policy of always
+- Use systemd to enable service docker on boot
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![image](https://user-images.githubusercontent.com/93610565/157108073-13e8f5b3-68d7-40b4-a397-ff1fcd5627c8.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
