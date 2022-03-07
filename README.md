@@ -34,14 +34,15 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - Metricbeat is used to collect data about the machines metrics such as CPU usage and uptime, this way we can insure the availability of our DVWA application that have been configured on each Web VM. 
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+Note: 
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+|    Name    |  Function  |               IP Address               | Operating System |
+|:----------:|:----------:|:--------------------------------------:|:----------------:|
+| Jump Box   |   Gateway  | Public: 20.127.21.57 Private: 10.1.0.6 |       Linux      |
+|    Web-1   | Web Server | Public: 20.127.78.21 Private: 10.1.0.4 |       Linux      |
+|    Web-2   | Web Server | Public: 20.127.78.21 Private: 10.1.0.5 |       Linux      |
+|    Web-3   | Web Server | Public: 20.127.78.21 Private: 10.1.0.7 |       Linux      |
+| Elk-Server | Monitoring | Public: 104.42.31.58 Private: 10.0.0.4 |       Linux      |
 
 ### Access Policies
 
