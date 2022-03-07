@@ -34,7 +34,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - Metricbeat is used to collect data about the machines metrics such as CPU usage and uptime, this way we can insure the availability of our DVWA application that have been configured on each Web VM. 
 
 The configuration details of each machine may be found below.
-Note: 
+Note: The Web Servers have the same public IP Address because they're all behind the load balancer.
 
 |    Name    |  Function  |               IP Address               | Operating System |
 |:----------:|:----------:|:--------------------------------------:|:----------------:|
@@ -48,19 +48,21 @@ Note:
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- Workstation IP: 24.50.25.41
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by Jump Box.
+- The Jump Box VM was the only machine allowed access to the other machines in the environment with the IP Address of 10.1.0.6. 
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+|    Name    | Publicly Accessible | Allowed IP Addresses |
+|:----------:|:-------------------:|:--------------------:|
+|   Jumpbox  |         Yes         |      24.50.25.41     |
+|    Web-1   |          No         |       10.1.0.6       |
+|    Web-2   |          No         |       10.1.0.6       |
+|    Web-3   |          No         |       10.1.0.6       |
+| Elk-Server |         Yes         | 10.1.0.6 24.50.25.41 |
 
 ### Elk Configuration
 
